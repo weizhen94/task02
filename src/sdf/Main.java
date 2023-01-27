@@ -6,6 +6,7 @@ import java.io.Console;
 
 public class Main{
     public static void main(String[] args) { 
+        try { 
         Console cons = System.console(); 
         Boolean exit = false; 
         System.out.println("Welcome.");
@@ -16,7 +17,6 @@ public class Main{
 
             if(calculations.equalsIgnoreCase("exit")) {
                 exit = true; 
-                System.out.println("Bye bye"); 
             }
 
             String[] toCalculate = calculations.trim().split(" "); 
@@ -37,6 +37,7 @@ public class Main{
                 result = valueOneDouble + valueThreeDouble;          
                 calculatedString = Double.toString(result); 
                 System.out.println(calculatedString);
+                calculatedString = "$last"; 
                 break; 
 
                 case "-":
@@ -58,12 +59,13 @@ public class Main{
                 break; 
 
                 default:            
-                
                 System.out.println("Please input 'number' followed by '+ or - or * or /' followed by 'number' ");
                 break; 
             }
-            
         } 
-
+    } catch (NumberFormatException e){
+        System.out.println("Bye bye");
     }
 }
+} 
+
