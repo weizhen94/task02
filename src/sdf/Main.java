@@ -1,40 +1,62 @@
 package sdf;
 
+
 import java.io.Console;
 
 public class Main{
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) { 
         Console cons = System.console(); 
         System.out.println("Welcome.");
         String calculations = cons.readLine(">"); 
-        String calculatedString; 
-        double calculated; 
-
+         
         if(calculations.equalsIgnoreCase("Exit")){
         System.out.println("Bye bye");
         } 
-        // else {
-        //     String[] toCalculate = calculations.split(" "); 
-             
-        //     String valueOne = toCalculate[0]; 
-        //     double valueOneDouble = Double.parseDouble(valueOne);  
+        else {
+            String[] toCalculate = calculations.trim().split(" "); 
+            
+            String valueOne = toCalculate[0]; 
+            double valueOneDouble = Double.parseDouble(valueOne);  
 
-        //     String valueThree = toCalculate[2]; 
-        //     double valueThreeDouble = Double.parseDouble(valueThree); 
+            String valueThree = toCalculate[2]; 
+            double valueThreeDouble = Double.parseDouble(valueThree); 
 
-        //     String operation = toCalculate[1]; 
+            String operation = toCalculate[1]; 
 
-        //     switch(operation){
-        //         case "+" -> { calculated = valueOneDouble + valueThreeDouble; }
-        //         case "-" -> { calculated = valueOneDouble - valueThreeDouble; }
-        //         case "*" -> { calculated = valueOneDouble * valueThreeDouble; }
-        //         case "/" -> { calculated = valueOneDouble / valueThreeDouble; }
-        //         default -> System.out.println("Please input a valid operation: '+ or - or * or / ");
-        //     }
+            String calculatedString;
+            double result;
 
-        //     calculatedString = Double.toString(calculated); 
-        //     System.out.println(calculatedString);
-        // }
+            switch(operation){
+                case "+": 
+                result = valueOneDouble + valueThreeDouble;          
+                calculatedString = Double.toString(result); 
+                System.out.println(calculatedString);
+                break; 
+
+                case "-":
+                result = valueOneDouble - valueThreeDouble;
+                calculatedString = Double.toString(result); 
+                System.out.println(calculatedString);
+                break; 
+
+                case "*":
+                result = valueOneDouble * valueThreeDouble;
+                calculatedString = Double.toString(result); 
+                System.out.println(calculatedString);
+                break; 
+
+                case "/":
+                result = valueOneDouble / valueThreeDouble;
+                calculatedString = Double.toString(result); 
+                System.out.println(calculatedString);
+                break; 
+
+                default:
+                System.out.println("Please input a valid operation: '+ or - or * or / ");
+                break; 
+            }
+
+  
+        } 
     }
 }
