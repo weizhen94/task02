@@ -37,7 +37,7 @@ public class Main{
                 result = valueOneDouble + valueThreeDouble;          
                 calculatedString = Double.toString(result); 
                 System.out.println(calculatedString);
-                calculatedString = "$last"; 
+                
                 break; 
 
                 case "-":
