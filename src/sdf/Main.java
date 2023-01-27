@@ -3,16 +3,22 @@ package sdf;
 
 import java.io.Console;
 
+
 public class Main{
     public static void main(String[] args) { 
         Console cons = System.console(); 
+        Boolean exit = false; 
         System.out.println("Welcome.");
-        String calculations = cons.readLine(">"); 
+        
          
-        if(calculations.equalsIgnoreCase("Exit")){
-        System.out.println("Bye bye");
-        } 
-        else {
+        while (!exit) {
+            String calculations = cons.readLine(">");
+
+            if(calculations.equalsIgnoreCase("exit")) {
+                exit = true; 
+                System.out.println("Bye bye"); 
+            }
+
             String[] toCalculate = calculations.trim().split(" "); 
             
             String valueOne = toCalculate[0]; 
@@ -51,12 +57,13 @@ public class Main{
                 System.out.println(calculatedString);
                 break; 
 
-                default:
-                System.out.println("Please input a valid operation: '+ or - or * or / ");
+                default:            
+                
+                System.out.println("Please input 'number' followed by '+ or - or * or /' followed by 'number' ");
                 break; 
             }
-
-  
+            
         } 
+
     }
 }
